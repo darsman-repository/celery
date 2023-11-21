@@ -1,6 +1,6 @@
 import random
-
 from celery import shared_task
+from celery.contrib import rdb
 import time
 
 
@@ -19,3 +19,11 @@ def send_sms(mobile, message):
     if rnd % 2 == 0:
         return True
     return False
+
+@shared_task
+def debugging():
+    rnd = random.randint(0, 10)
+    name = __name__
+    mobile = '09128*******'
+    rdb.set_trace()
+    return rnd
