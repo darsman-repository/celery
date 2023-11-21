@@ -5,9 +5,9 @@ import time
 
 
 @shared_task
-def test_task(counter):
+def test_task():
     time.sleep(1)
-    print(f"{counter} - hello world")
+    print(f"hello world")
 
 
 @shared_task

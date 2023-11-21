@@ -8,5 +8,5 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         print(time.time())
         for counter in range(0,100):
-            test_task.delay(counter)
+            test_task.delay()
         print(time.time())
